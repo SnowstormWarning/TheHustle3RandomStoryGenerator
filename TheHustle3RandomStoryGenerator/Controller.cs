@@ -116,14 +116,14 @@ namespace TheHustle3RandomStoryGenerator
                 }
             return predicate += ".";
         }
-        public Scene StartAdventure(List<Character> characters)
+        public Scene StartAdventure(List<Character> alignments)
         {
             Scene startScene = new Scene();
             string megaSentence = "";
-            foreach (Character person in characters)
-            {
-                megaSentence += ConstructSentence(person.GetAlignment());
-            }
+            //foreach (Character person in characters)
+            //{
+            //    //megaSentence += ConstructSentence(person);
+            //}
             startScene.Prompt = "Yes";
             startScene.NeutralChoice = "Neutral";
             startScene.BadChoice = "Bad";
