@@ -24,11 +24,51 @@ namespace TheHustle3RandomStoryGenerator
     {
         private bool _isDead;
         private Word _nameWord;
+        private int _goodScore;
+        private int _badScore;
+        private int _neutralScore;
 
         public bool IsCharacterDead()
         {
             return _isDead;
         }
+        public void ToggleLife()
+        {
+            _isDead = !_isDead;
+        }
+        public int GetAlignmentScore(Alignment a)
+        {
+            switch (a)
+            {
+                case Alignment.Good:
+                    return _goodScore;
+                case Alignment.Neutral:
+                    return _neutralScore;
+                case Alignment.Evil:
+                    return _badScore;
+                default:
+                    return _neutralScore;
+            }
+        }
+        public void SetAlignmentScore(Alignment a, int val)
+        {
+            switch (a)
+            {
+                case Alignment.Good:
+                    _goodScore = val;
+                    break;
+                case Alignment.Neutral:
+                    _neutralScore = val;
+                    break;
+                case Alignment.Evil:
+                    _badScore = val;
+                    break;
+                default:
+                    _neutralScore = val;
+                    break;
+            }
+        }
+        
 
     }
     public class Word
