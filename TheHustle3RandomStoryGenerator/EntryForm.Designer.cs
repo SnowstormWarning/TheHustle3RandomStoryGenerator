@@ -72,6 +72,7 @@ namespace TheHustle3RandomStoryGenerator
             this.SelectOptionButton.TabIndex = 3;
             this.SelectOptionButton.Text = "Select Option";
             this.SelectOptionButton.UseVisualStyleBackColor = true;
+            this.SelectOptionButton.Click += new System.EventHandler(this.SelectOptionButton_Click);
             // 
             // EntryForm
             // 
