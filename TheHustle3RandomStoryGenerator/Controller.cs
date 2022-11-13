@@ -116,5 +116,36 @@ namespace TheHustle3RandomStoryGenerator
                 }
             return predicate += ".";
         }
+        public Scene StartAdventure(List<Character> characters)
+        {
+            Scene startScene = new Scene();
+            string megaSentence = "";
+            foreach (Character person in characters)
+            {
+                megaSentence += ConstructSentence(person.GetAlignment());
+            }
+            startScene.Prompt = "Yes";
+            startScene.NeutralChoice = "Neutral";
+            startScene.BadChoice = "Bad";
+            startScene.GoodChoice = "Good";
+            return startScene;
+        }
+
+        public void EndAdventure()
+        {
+
+        }
+
+        public Scene NextScene(string choice, Alignment alignmentOfChoice)
+        {
+            Scene nextScene = new Scene();
+            nextScene.Prompt = "Words";
+            nextScene.NeutralChoice = "Neutral";
+            nextScene.BadChoice = "Bad";
+            nextScene.GoodChoice = "Good";
+            return nextScene;
+        }
+
+
     }
 }
