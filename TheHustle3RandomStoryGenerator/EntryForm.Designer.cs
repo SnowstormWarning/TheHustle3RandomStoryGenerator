@@ -29,56 +29,59 @@ namespace TheHustle3RandomStoryGenerator
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AdventureButton = new System.Windows.Forms.Button();
+            this.PromptTextBox = new System.Windows.Forms.TextBox();
+            this.OptionsListBox = new System.Windows.Forms.ListBox();
+            this.SelectOptionButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // AdventureButton
             // 
-            this.button1.Location = new System.Drawing.Point(373, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(288, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start Adventure";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AdventureButton.Location = new System.Drawing.Point(373, 12);
+            this.AdventureButton.Name = "AdventureButton";
+            this.AdventureButton.Size = new System.Drawing.Size(288, 46);
+            this.AdventureButton.TabIndex = 0;
+            this.AdventureButton.Text = "Start Adventure";
+            this.AdventureButton.UseVisualStyleBackColor = true;
+            this.AdventureButton.Click += new System.EventHandler(this.AdventureButton_Click);
             // 
-            // textBox1
+            // PromptTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 64);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1033, 475);
-            this.textBox1.TabIndex = 1;
+            this.PromptTextBox.Location = new System.Drawing.Point(12, 64);
+            this.PromptTextBox.Multiline = true;
+            this.PromptTextBox.Name = "PromptTextBox";
+            this.PromptTextBox.ReadOnly = true;
+            this.PromptTextBox.Size = new System.Drawing.Size(1033, 475);
+            this.PromptTextBox.TabIndex = 1;
             // 
-            // listBox1
+            // OptionsListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 32;
-            this.listBox1.Location = new System.Drawing.Point(3, 545);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1042, 356);
-            this.listBox1.TabIndex = 2;
+            this.OptionsListBox.FormattingEnabled = true;
+            this.OptionsListBox.ItemHeight = 32;
+            this.OptionsListBox.Location = new System.Drawing.Point(3, 545);
+            this.OptionsListBox.Name = "OptionsListBox";
+            this.OptionsListBox.Size = new System.Drawing.Size(1042, 356);
+            this.OptionsListBox.TabIndex = 2;
             // 
-            // button2
+            // SelectOptionButton
             // 
-            this.button2.Location = new System.Drawing.Point(824, 907);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 46);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Select Option";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SelectOptionButton.Enabled = false;
+            this.SelectOptionButton.Location = new System.Drawing.Point(824, 907);
+            this.SelectOptionButton.Name = "SelectOptionButton";
+            this.SelectOptionButton.Size = new System.Drawing.Size(221, 46);
+            this.SelectOptionButton.TabIndex = 3;
+            this.SelectOptionButton.Text = "Select Option";
+            this.SelectOptionButton.UseVisualStyleBackColor = true;
             // 
             // EntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 992);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SelectOptionButton);
+            this.Controls.Add(this.OptionsListBox);
+            this.Controls.Add(this.PromptTextBox);
+            this.Controls.Add(this.AdventureButton);
             this.Name = "EntryForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -88,10 +91,10 @@ namespace TheHustle3RandomStoryGenerator
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AdventureButton;
+        private System.Windows.Forms.TextBox PromptTextBox;
+        private System.Windows.Forms.ListBox OptionsListBox;
+        private System.Windows.Forms.Button SelectOptionButton;
     }
 }
 

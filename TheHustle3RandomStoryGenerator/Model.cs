@@ -12,7 +12,7 @@ namespace TheHustle3RandomStoryGenerator
         Evil
     }
 
-    class Scene
+    public class Scene
     {
         public string Prompt;
         public string GoodChoice;
@@ -20,7 +20,7 @@ namespace TheHustle3RandomStoryGenerator
         public string BadChoice;
     }
 
-    class Character : Noun
+    public class Character : Noun
     {
         private bool _isDead;
         private Word _nameWord;
@@ -31,7 +31,7 @@ namespace TheHustle3RandomStoryGenerator
         }
 
     }
-    class Word
+    public class Word
     {
 
         private string _name;
@@ -48,7 +48,7 @@ namespace TheHustle3RandomStoryGenerator
 
     }
 
-    class Noun: Word
+    public class Noun: Word
     {
         public string MakeCapital()
         {
@@ -69,12 +69,12 @@ namespace TheHustle3RandomStoryGenerator
         }
     }
     
-    class Adjective : Word
+    public class Adjective : Word
     {
 
     }
 
-    class Verb : Word
+    public class Verb : Word
     {
 
     }
