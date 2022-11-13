@@ -28,6 +28,9 @@ namespace TheHustle3RandomStoryGenerator
             {
                 AdventureButton.Text = "Start Adventure";
                 EndAdventure();
+                SelectOptionButton.Enabled = false;
+                currentScene = new Scene();
+                PopulateWithScene();
 
             }
             else
@@ -35,6 +38,7 @@ namespace TheHustle3RandomStoryGenerator
                 AdventureButton.Text = "End Adventure";
                 currentScene = StartAdventure();
                 PopulateWithScene();
+                SelectOptionButton.Enabled = true;
 
             }
             _onAdventure = !_onAdventure;

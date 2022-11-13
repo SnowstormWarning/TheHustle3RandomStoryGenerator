@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace TheHustle3RandomStoryGenerator
 {
@@ -10,7 +11,74 @@ namespace TheHustle3RandomStoryGenerator
         public List<Noun> Nouns;
         public List<Adjective> Adjectives;
         public List<Verb> Verbs;
-        public List<Character> Characters;
+        public List<Character> Characters = new List<Character>();
+
+        public Controller()
+        {
+            Words = new List<Word>();
+            Nouns = new List<Noun>();
+            Adjectives = new List<Adjective>();
+            Verbs = new List<Verb>();
+            using (StreamReader reader = new StreamReader(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/wordsFile.txt"))
+            {
+                Console.WriteLine(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/wordsFile.txt");
+                int phase = 0;
+                while (!reader.EndOfStream)
+                {
+                    string currentLine = reader.ReadLine();
+                    switch (currentLine)
+                    {
+                        case "NOUNS":
+                            phase = 0;
+                            break;
+                        case "ADJECTIVES":
+                            phase = 1;
+                            break;
+                        case "VERBS":
+                            phase = 2;
+                            break;
+                        default:
+                            string word = currentLine;
+                            Alignment alignment = (Alignment)(Int32.Parse(reader.ReadLine()));
+                            switch(phase)
+                            {
+                                case 0:
+                                    Noun noun = new Noun();
+                                    noun.SetAlignment(alignment);
+                                    noun.SetName(word);
+                                    Nouns.Add(noun);
+                                    break;
+                                case 1:
+                                    Adjective adj = new Adjective();
+                                    adj.SetAlignment(alignment);
+                                    adj.SetName(word);
+                                    Adjectives.Add(adj);
+                                    break;
+                                case 2:
+                                    Verb verb = new Verb();
+                                    verb.SetAlignment(alignment);
+                                    verb.SetName(word);
+                                    Verbs.Add(verb);
+                                    break;
+                            }
+
+                            break;
+                    }
+                }
+                foreach(Word word in Nouns)
+                {
+                    Words.Add(word);
+                }
+                foreach (Word word in Adjectives)
+                {
+                    Words.Add(word);
+                }
+                foreach (Word word in Verbs)
+                {
+                    Words.Add(word);
+                }
+            }
+        }
 
         public string ConstructSentence(Alignment alignment)
         {
@@ -116,11 +184,11 @@ namespace TheHustle3RandomStoryGenerator
                 }
             return predicate += ".";
         }
-        public Scene StartAdventure(List<Character> characters)
+        public Scene StartAdventure()
         {
             Scene startScene = new Scene();
             string megaSentence = "";
-            foreach (Character person in characters)
+            foreach (Character person in Characters)
             {
                 megaSentence += ConstructSentence(person.GetAlignment());
             }
