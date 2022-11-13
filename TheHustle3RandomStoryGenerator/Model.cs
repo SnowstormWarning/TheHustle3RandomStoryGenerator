@@ -12,6 +12,14 @@ namespace TheHustle3RandomStoryGenerator
         Evil
     }
 
+    class Scene
+    {
+        public string Prompt;
+        public string GoodChoice;
+        public string NeutralChoice;
+        public string BadChoice;
+    }
+
     class Character : Noun
     {
         private bool _isDead;
