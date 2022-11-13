@@ -33,7 +33,6 @@ namespace TheHustle3RandomStoryGenerator
     }
     public class Word
     {
-
         private string _name;
         private Alignment _alignment;
         public override string ToString()
@@ -46,6 +45,15 @@ namespace TheHustle3RandomStoryGenerator
             return _alignment;
         }
 
+        public void SetAlignment(Alignment alignment)
+        {
+            _alignment = alignment;
+        }
+
+        public void SetName(string name)
+        {
+            _name = name;
+        }
     }
 
     public class Noun: Word

@@ -17,7 +17,12 @@ namespace TheHustle3RandomStoryGenerator
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EntryForm());
+            EntryForm form = new EntryForm();
+            Controller controller = new Controller();
+            form.StartAdventure = controller.StartAdventure;
+            form.EndAdventure = controller.EndAdventure;
+            form.NextScene = controller.NextScene;
+            Application.Run(form);
         }
     }
 }
