@@ -1755,8 +1755,6 @@ score
 1
 screw
 1
-sex
-1
 shop
 1
 shower
@@ -1955,8 +1953,6 @@ border
 1
 branch
 1
-breast
-0
 brother
 0
 buddy
